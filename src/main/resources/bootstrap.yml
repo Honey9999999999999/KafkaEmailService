@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: email-service
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
