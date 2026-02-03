@@ -7,6 +7,9 @@ spring:
         enabled: true
         service-id: config-server
       fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 10
 
 eureka:
   client:
