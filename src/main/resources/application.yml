@@ -4,7 +4,11 @@ server:
 spring:
   application:
     name: email-service
+  config:
+    import: "optional:configserver:http://config-server:8888"
   cloud:
+    config:
+      fail-fast: true
     bus:
       enabled: true
     stream:
@@ -28,3 +32,8 @@ management:
   endpoint:
     shutdown:
       enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
